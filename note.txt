@@ -1,0 +1,87 @@
+- Utilisation de useState() et explication event.preventDefault() - OK
+- Utilisation de useEffect() et faire des requêtes API vers Django - En cours
+  1. Autoriser React à accéder à l'API de Django - à fixer (la requête a été bloqué par Django car React n'est pas une source autorisée) - OK après installation et activation du CORS
+
+  2. Nous avons ici erreur 401 car les données sont incorrect -> Je veux afficher une erreur dans l'interface pour cela
+
+    - On utilise toujours useState() pour gérér les états comme des message d'erreurs etc
+
+    - S'il y a une erreur, on affiche un message d'erreur sur l'interface
+
+    ```React
+    { errorMessage && (
+          <Alert color="red" withCloseButton>
+            {{ errorMessage }}
+          </Alert>
+        )}
+    ```
+
+    C'est la même avec 
+
+    if (errorMessage) {
+      return (
+        <Alert color="red" withCloseButton>
+          {{ errorMessage }}
+        </Alert>
+      );
+    }
+
+    - Mety misy code tsy azonareo aloha @ zao volo zao fa araho ftsn, efa misy commentaire ihany reny
+
+    - Ity zao no code vaovao ao le misy `?.` io, fa anaontanina IA (resaka données facultatif io)
+
+    const message =
+          error.response.data?.detail ||
+          "Nom d'utilisateur ou mot de passe incorrect.";
+
+
+    - Ny dikanle {loading ? <Loader size="sm" color="blue" /> : "Se connecter"}
+
+    ? io mitovy @ hoe
+
+    if (loading) {
+      return <Loader size="sm" color="blue" />;
+    }
+
+    zany hoe condition le izy 
+
+    loading ? return 'loading' : 'not loading'
+
+    eto le `:` ndray else
+
+  3. Login -> OK, Création de la page d'acceuil (tsy ampiko style be)
+    - Création composant (Home.jsx) - OK
+  4. Utilisation d'un Routeur (react-router-dom) pour dire que si on est sur la page d'acceuil, on affiche le composant Home  (Home.jsx)
+
+    - Installer react-router-dom avec npm install react-router-dom
+
+    Voici comment améliorer ton code React pour :
+
+    ✅ Sauvegarder les tokens JWT (access et refresh) dans le localStorage.
+
+    ✅ Rediriger vers /home après une connexion réussie.
+
+    ✅ Créer un système de routage avec react-router-dom (version 6+).
+
+    ✅ Protéger la route /home pour que seuls les utilisateurs connectés y accèdent.
+
+    ✅ Ajouter du contenu plus complet dans la page d’accueil.
+
+
+
+__________________
+
+
+Somary copie colleko aloha de rapitso azavaiko manjary taraiky tsika, ny tanjona aloha hoe mande le izy de avy eo mijery explication tsirairay @ zay.
+
+
+- Tafiditra zao izy eto rehefa connecter fa eo @ le rehefa ovaina manuel makany @ '/' le URL de miverina login le izy nefa tokony hoe any @ '/home' satria za efa connecter
+
+
+- Mivalider anle token @ verify token satria sao misy mipirate le application de lasa ze token rehetra Tafiditra foana - OK
+
+
+- Raha fafako zao le token ao @ localStorage reo de déconnecte le compte io - OK
+
+
+Andraso fa pusheko zao reo fa zay angamba izy rehetra de le code any Jennifer io ko ataoko branche alain raha mety de ataonao copie collé ftsn
