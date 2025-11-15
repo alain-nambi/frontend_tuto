@@ -7,6 +7,9 @@ import {
   Text,
   Alert,
   Loader,
+  Card,
+  Divider,
+  CardSection,
 } from "@mantine/core";
 import { useState } from "react";
 import axios from "axios";
@@ -39,74 +42,67 @@ function Login() {
       }
     } catch (err) {
       if (err.response) {
-        console.log("❌ Erreur de connexion :", typeof(err.response.status));
+        console.log("❌ Erreur de connexion :", typeof err.response.status);
 
         if (err.response.status === 401) {
           setError("Adresse email ou mot de passe incorrect.");
         } else {
           setError(err.response.data?.detail || "Identifiants incorrects.");
         }
-
-      }
-      else setError("Erreur réseau. Vérifiez votre connexion.");
+      } else setError("Erreur réseau. Vérifiez votre connexion.");
     } finally {
       setLoading(false);
+      setForm({ username: "", password: "" });
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 to-blue-200">
-      <Paper shadow="md" radius="lg" p="xl" className="w-full max-w-sm bg-white border border-blue-50">
-        <div className="text-center mb-6">
-          <Title order={2} className="text-blue-700 font-semibold">
-            Connexion
-          </Title>
-          <Text size="sm" c="dimmed">
-            Accédez à votre espace
-          </Text>
-        </div>
+    <div className="flex items-center justify-center min-h-screen">
+      <form onSubmit={handleSubmit} className="w-full max-w-sm">
+        <Card>
+          <Card.Section p="md" pb="xs">
+            <Title order={3}>Log in to the application</Title>
+            <Text size="sm" c="dimmed" mt={"xs"}>
+              Enter your email and password to access your account.
+            </Text>
+          </Card.Section>
 
-        {error && (
-          <Alert color="red" radius="md" mb="sm">
-            {error}
-          </Alert>
-        )}
+          {error && (
+            <Card.Section p="md" py="xs">
+              <Alert color="red">{error}</Alert>
+            </Card.Section>
+          )}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <TextInput
-            label="Nom d'utilisateur"
-            placeholder="ex: tiavina"
-            required
-            variant="filled"
-            value={form.username}
-            onChange={(e) =>
-              setForm({ ...form, username: e.currentTarget.value })
-            }
-          />
-
-          <PasswordInput
-            label="Mot de passe"
-            placeholder="••••••••"
-            required
-            variant="filled"
-            value={form.password}
-            onChange={(e) =>
-              setForm({ ...form, password: e.currentTarget.value })
-            }
-          />
-
-          <Button
-            type="submit"
-            fullWidth
-            radius="md"
-            color="blue"
-            disabled={loading}
-            className="mt-3 font-semibold"
-          >
-            {loading ? <Loader size="sm" color="blue" /> : "Se connecter"}
-          </Button>
-        </form>
-      </Paper>
+          <Divider my="xs" labelPosition="center" />
+          <Card.Section p="md" py="xs">
+            <TextInput
+              label="Email"
+              placeholder="alainnambi@gmail.com"
+              required
+              value={form.username}
+              onChange={(e) =>
+                setForm({ ...form, username: e.currentTarget.value })
+              }
+            />
+            <PasswordInput
+              label="Password"
+              placeholder="***********"
+              type="password"
+              required
+              mt="md"
+              value={form.password}
+              onChange={(e) =>
+                setForm({ ...form, password: e.currentTarget.value })
+              }
+            />
+          </Card.Section>
+          <Card.Section p="md" pt="xs">
+            <Button fullWidth type="submit">
+              {loading ? <Loader size="sm" color="blue" /> : "Se connecter"}
+            </Button>
+          </Card.Section>
+        </Card>
+      </form>
     </div>
   );
 }

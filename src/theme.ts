@@ -92,9 +92,9 @@ export const shadcnTheme: MantineThemeOverride = createTheme({
     fuchsia: fuchsiaColors,
     pink: pinkColors,
 
-    primary: zincColors,
-    secondary: zincColors,
-    dark: zincColors,
+    primary: greenColors,
+    secondary: stoneColors,
+    dark: stoneColors,
 
     error: redColors as MantineColorsTuple,
     success: greenColors,
@@ -104,7 +104,7 @@ export const shadcnTheme: MantineThemeOverride = createTheme({
   focusRing: "never",
   scale: 1,
   primaryColor: "primary",
-  primaryShade: {"light":8,"dark":0},
+  primaryShade: {"light":6,"dark":5},
   autoContrast: true,
   luminanceThreshold: 0.3,
   fontFamily: "Geist",

@@ -4,6 +4,7 @@ import Home from "./components/home";
 import ProtectedRoute from "./security/protect-route";
 import PublicRoute from "./security/public-route";
 import { Navigate } from "react-router-dom";
+import { SignUp } from "./components/signup";
 
 function App() {
   return (
@@ -22,13 +23,22 @@ function App() {
           }
         />
 
+        <Route 
+          path="/signup"
+          element={
+            <PublicRoute>
+              <SignUp />
+            </PublicRoute>
+          }
+        />
+
         {/* 🔒 Route protégée (accès uniquement si connecté) */}
         <Route
           path="/home"
           element={
-            <ProtectedRoute>
+            <PublicRoute>
               <Home />
-            </ProtectedRoute>
+            </PublicRoute>
           }
         />
 
