@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./components/login";
+import { Login } from "./components/auth/login";
 import Home from "./components/home";
 import ProtectedRoute from "./security/protect-route";
 import PublicRoute from "./security/public-route";
 import { Navigate } from "react-router-dom";
-import { SignUp } from "./components/signup";
+import { SignUp } from "./components/auth/signup";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
           }
         />
 
-        <Route 
+        <Route
           path="/signup"
           element={
             <PublicRoute>

@@ -15,7 +15,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+export function Login() {
   const [form, setForm] = useState({ username: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -86,7 +86,7 @@ function Login() {
             />
             <PasswordInput
               label="Password"
-              placeholder="***********"
+              placeholder="Enter your password"
               type="password"
               required
               mt="md"

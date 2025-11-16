@@ -24,7 +24,7 @@ export function SignUp() {
                 <Divider my="sm" label="OR CONTINUE WITH" labelPosition="center" />
                 <Card.Section p="md" py="xs">
                     <TextInput label="Email" placeholder="alainnambi@gmail.com" required />
-                    <PasswordInput label="Password" placeholder='***********' type="password" required mt="md" />
+                    <PasswordInput label="Password" placeholder="Enter your password" type="password" required mt="md" />
                 </Card.Section>
                 <Card.Section p="md" pt="xs">
                     <Button fullWidth>Create account</Button>
