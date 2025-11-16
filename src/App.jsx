@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Login } from "./components/auth/login";
-import Home from "./components/home";
+import Home from "./components/dashboard/home";
 import ProtectedRoute from "./security/protect-route";
 import PublicRoute from "./security/public-route";
 import { Navigate } from "react-router-dom";

@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+
+.title {
+  @apply text-[clamp(2.5rem,5vw,4rem)] leading-none bg-gradient-to-r from-[var(--mantine-primary-color-filled)] to-[var(--mantine-primary-color-8)] bg-clip-text text-transparent;
+}
+
+.themeIconBackground {
+  background: rgba(var(--mantine-primary-color-filled), 0.07);
+}

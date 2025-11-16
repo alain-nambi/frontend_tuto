@@ -107,7 +107,7 @@ export const shadcnTheme: MantineThemeOverride = createTheme({
   primaryShade: {"light":6,"dark":5},
   autoContrast: true,
   luminanceThreshold: 0.3,
-  fontFamily: "Geist",
+  fontFamily: "Poppins",
   radius: {
     xs: rem("6px"),
     sm: rem("8px"),
@@ -148,7 +148,7 @@ export const shadcnTheme: MantineThemeOverride = createTheme({
   },
 
   headings: {
-    fontFamily: "Geist",
+    fontFamily: "Poppins",
     sizes: {
       h1: {
         fontSize: rem("36px"),
