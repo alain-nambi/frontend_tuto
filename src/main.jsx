@@ -7,7 +7,7 @@ import { shadcnCssVariableResolver } from "./theme/cssVariablesResolver";
 import { shadcnTheme } from "./theme/theme";
 import "./theme/style.css";
 
-import "@mantine/core/styles.css";
+import '@mantine/core/styles.css';
 import { MantineProvider } from "@mantine/core";
 
 createRoot(document.getElementById("root")).render(
