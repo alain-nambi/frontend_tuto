@@ -12,12 +12,12 @@ import {
 } from '@tabler/icons-react';
 import { Center, Stack, Tooltip, UnstyledButton } from '@mantine/core';
 // import { MantineLogo } from '@mantinex/mantine-logo';
-import classes from './sidebar.module.css';
+import classes from './styles/sidebar.module.css';
 
 function NavbarLink({ icon, label, active, onClick }) {
   return (
     <Tooltip label={label} position="right" transitionProps={{ duration: 0 }}>
-      <UnstyledButton onClick={onClick} className={classes.link} data-active={active || undefined}>
+      <UnstyledButton onClick={onClick} className={['Logout'].includes(label) ? classes.slink : classes.link} data-active={active || undefined}>
         {React.createElement(icon, { size: 20, stroke: 1.5 })}
       </UnstyledButton>
     </Tooltip>
@@ -49,7 +49,7 @@ export function SidebarComponent() {
   return (
     <nav className={classes.navbar}>
       <Center>
-        {/* <MantineLogo type="mark" inverted size={30} /> */}
+        {/* <MantineLogo type="mark" inverted size={30} className={classes.MantineLogo} /> */}
       </Center>
 
       <div className={classes.navbarMain}>

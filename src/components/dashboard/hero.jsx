@@ -1,8 +1,6 @@
 import { Container, Title, Text, Button, Group, Stack, Grid, ThemeIcon, Box, Paper, rgba } from "@mantine/core";
 import { GitHubLogoIcon, RocketIcon, LightningBoltIcon, StarIcon, DashboardIcon } from "@radix-ui/react-icons";
-// import classes from "./hero.module.css";
-
-import "./hero.css"
+import classes from "./styles/hero.module.css";
 
 export const Hero = () => {
   const features = [
@@ -26,7 +24,7 @@ export const Hero = () => {
                 </Text>
               </Group>
 
-              <Title className="title" order={1} size="h1">
+              <Title className={classes.title} order={1} size="h1">
                 Build Faster, Scale Better with Our Platform
               </Title>
 

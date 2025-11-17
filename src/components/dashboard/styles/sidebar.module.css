@@ -25,3 +25,13 @@
     }
   }
 }
+
+.slink {
+  @apply w-12 h-12 rounded-md flex items-center justify-center;
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+  
+  &:hover {
+    background-color: light-dark(var(--mantine-color-red-light));
+    color: var(--mantine-color-red-light-color)
+  }
+}
